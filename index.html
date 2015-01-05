@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MWW NetRelevance</title>
+<link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/dinn.css">
+<link href="css/styles.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/kinetic-v3.10.3.min.js"></script>
+<script src="js/netrelevance.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/jquery.ui.datepicker.js"></script>
+</head>
+<body>
+	<!--
+	<div style="width:980px; height:10px; position:absolute; left:0; top:0; background:#cc9900; display:block; z-index:9999" onclick="alert('this works');"></div>
+	-->
+	<div id="settings_container">
+    	<div id="settingsHeader"><p>view settings</p></div>
+        
+        <div id="dataRangeChooseHolder">
+            <div id="dateRangeSettingsHeader">date range</div>
+            <div id="dateRangeStart">07 / 01 / 2012</div>
+            <div id="dateRangeEnd">08 / 01 / 2012</div>
+        </div>
+        
+        <div id="viewByHolder">
+            <div id="viewbyHeader">view by</div>
+            <div id="viewbyOption">Week</div>    
+        </div>
+        
+        <div id="dataTypeHolder">
+            <div id="dataTypeHeader">data type</div>
+            <div id="dataTypeOption">both</div>    
+        </div>
+        
+        <div id="comaniesHolder">
+            <div id="companiesHeader">companies</div>
+            <div id="companiesOption">Digibeat</div>   
+        </div> 
+        
+        <div id="dateChooseHolder">
+        	<div id="dateOutputHeader">date range</div>
+            <div id="dateOutputStart">07 / 01 / 2012</div>
+            <div id="dateOutputEnd">08 / 01 / 2012</div>
+            
+            <div id="datePickerStart">
+            	<span class="dateChoosePreTxt">start date</span>
+            </div>
+            <div id="datePickerEnd">
+            	<span class="dateChoosePreTxt">end date</span>
+            </div>
+        </div><!-- end dateChooseHolder div -->
+        
+        <div id="viewByChooseHolder">
+        	<div id="viewByOutputHeader">view by</div>
+            <div id="viewByOutputSelected">week</div>
+            
+            <ul>
+              <li alt="1" name="DAY"><span>day</span></li>
+              <li alt="2" name="WEEK"><span>week</span></li>
+              <li alt="3" name="MONTH"><span>month</span></li>
+              <li alt="4" name="YEAR"><span>year</span></li>
+            </ul>
+        </div>
+        
+        <div id="dataTypeOutputHolder">
+        	<div id="dataTypeOutputHeader">data type</div>
+            <div id="dataTypeOutputSelected">both</div>
+            
+            <ul>
+              <li alt="1" name="TREND LINE"><span>Trend Line</span></li>
+              <li alt="2" name="BUBBLES"><span>Bubbles</span></li>
+              <li alt="3" name="BOTH"><span>Both</span></li>
+            </ul>
+        </div>
+        
+        <div id="chooseCompanyHolder">
+        	<div id="chooseCompanyHeader">Companies</div>
+            <div id="chooseCompanySelected">Digibeat</div>
+            
+            
+            <div id="choosePrimaryCompany">
+            	<span>Primary Company</span>
+                <div id="primarydropdown">First Company</div>
+                <div id="dropdownOptionsHolder">
+                	<div alt="1" name="First Company"><span>First Company</span></div>
+                    <div alt="2" name="Second Company" ><span>Second Company</span></div>
+                    <div alt="3" name="Third Company" ><span>Third Company</span></div>
+                </div>
+            </div>
+           
+            <div id="chooseSecondaryCompany1">
+            	<span>secondary company 1</span>
+                <div id="altCompany1dropdown">Alt Company 1</div>
+                <div id="dropdownOptionsHolder">
+                	<div alt="1" name="Alt Company 1"><span>Alt Company 1</span></div>
+                    <div alt="2" name="Alt Company 2" ><span>Alt Company 2</span></div>
+                    <div alt="3" name="Alt Company 3" ><span>Alt Company 3</span></div>
+                </div>
+            </div>
+            
+            <div id="chooseSecondaryCompany2">
+            	<span>secondary company 2</span>
+                <div id="altCompany2dropdown">Alt Company 3</div>
+                <div id="dropdownOptionsHolder">
+                	<div alt="1" name="Alt Company 3"><span>Alt Company 3</span></div>
+                    <div alt="2" name="Alt Company 4" ><span>Alt Company 4</span></div>
+                    <div alt="3" name="Alt Company 5" ><span>Alt Company 5</span></div>
+                </div>
+            </div>
+            
+            <div id="chooseSecondaryCompany3">
+            	<span>secondary company 3</span>
+                <div id="altCompany3dropdown">Alt Company 6</div>
+                <div id="dropdownOptionsHolder">
+                	<div alt="1" name="Alt Company 6"><span>Alt Company 6</span></div>
+                    <div alt="2" name="Alt Company 7" ><span>Alt Company 7</span></div>
+                    <div alt="3" name="Alt Company 8" ><span>Alt Company 8</span></div>
+                </div>
+            </div>
+
+        </div>
+           
+    </div><!-- end settings_container div -->
+
+	<div id="app_curtain"></div>
+    
+	<div id="app_container">
+    	<div id="header">      	
+            <div id="currCompanyHolder">
+            	<div id="currCompanyHeader">Current Co</div>
+                <div id="currCompany">Digibeat</div>
+            </div>
+        	
+            <div id="dateRangeHolder">
+            	<div id="dateRangeHeader">date range</div>
+                <div id="dateRange">07/01/2012 - 08/01/2012</div>
+            </div>
+            
+            <div id="relevanceHolder">
+            	<div id="relevanceHeader">relevance</div>
+                <div id="relevance">2.3</div>
+            </div>
+            
+            <div id="trustHolder">
+            	<div id="trustHeader">trust</div>
+                <div id="trust">-10,711.58</div>
+            </div>
+            
+            <div id="exposureHolder">
+            	<div id="exposureHeader">exposure</div>
+                <div id="exposure">282,871,002</div>
+            </div>
+            
+            <div id="logo"><img src="images/logo.png" id="logoImage"/></div>
+        </div><!-- end header div -->
+        
+        <div id="appChart">
+        	<!--
+        	<div id="oneMarker" class="plotMarker">1</div>
+            <div id="tenMarker" class="plotMarker">10</div>
+            <div id="hundredMarker" class="plotMarker">100</div>
+            -->
+			<div id="trend-detail-wrapper">
+				<div id="left-column">
+					<img src="images/NetRelevance-GrayArrow.png" width="30" height="60" id="arrowPointer" />
+				</div>
+				<div id="right-column">
+					<span id="top">
+						<span class="close">
+							<img src="images/NetRelevance_X.png" width="15" height="16" id="trendDetailClose" />
+						</span>
+						<span class="title">
+							TREND DETAIL
+						</span>
+					</span>
+					<span id="middle">
+						<span id="middle-left-column">
+							<p>RELEVANCE</p>
+							<p>% CHANGE</p>
+						</span>
+						<span id="middle-right-column">
+							<p class="trendValue">17.5</p>
+							<p class="trendDelta">+5.2%</p>
+					   </span>
+					</span>
+					<span id="bottom">
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation...</p>
+					</span>
+				</div>	
+			</div> <!-- end trend-detail-wrapper -->
+			
+			<div id="point-detail-wrapper">
+				<div id="left-column">
+					<img src="images/NetRelevance-GrayArrow.png" width="30" height="60" id="arrowPointer" />
+				</div>
+				<div id="right-column">
+					<span id="top">
+						<span class="close">
+							<img src="images/NetRelevance_X.png" width="15" height="16" id="pointDetailClose" />
+						</span>
+						<span class="title">
+							INSTANCE DETAIL
+						</span>
+					</span>
+					<span id="middle">
+						<span id="middle-left-column">
+							<p>RELEVANCE</p>
+							<p>TRUST</p>
+							<p>EXPOSURE</p>
+						</span>
+						<span id="middle-right-column">
+							<p class="relevanceValue">17.5</p>
+							<p class="trustValue">+3.2</p>
+							<p class="exposureValue">5 Million</p>
+					   </span>
+					</span>
+					<span id="bottom">
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation...</p>
+					</span>
+					<span id="instanceFull">CONTENT ANALYSIS</span>
+				</div>	
+			</div> <!-- end point-detail-wrapper -->
+			
+			<div id="tabs-wrapper">
+				<div id="tabsCloseBtn"><p>Return to <br />Graph</p></div>
+				<ul id="tabs">
+					<li id="tabsTopContent" class="selectedTopTab" >TOP CONTENT</li>
+					<li id="tabsTopInfluencers">TWITTER INFLUENCERS</li>
+					<li id="tabsTopTweets">TOP TWEETS</li>
+				</ul>
+				<hr />
+				<div id="content-wrapper">
+					<div id="top-content">
+					<span class="top-content-title">RANK</span> 
+					<span class="top-content-title">SCORE</span>
+						<ul>
+							<li>
+								<div class="top-content-rank">01</div> 
+								<div class="top-content-score">99</div>
+								<div class="top-content-content">
+									<h2>Article headline lorem ipsum dolor site amet</h2>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie </p>
+									<a href="#">http://www.article-link.com/...</a>
+								</div>
+							</li>
+							<li>
+								<div class="top-content-rank">02</div> 
+								<div class="top-content-score">99</div>
+								<div class="top-content-content">
+									<h2>Article headline lorem ipsum dolor site amet</h2>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie </p>
+									<a href="#">http://www.article-link.com/...</a>
+								</div>
+							</li>
+							<li>
+								<div class="top-content-rank">03</div> 
+								<div class="top-content-score">99</div>
+								<div class="top-content-content">
+									<h2>Article headline lorem ipsum dolor site amet</h2>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie </p>
+									<a href="#">http://www.article-link.com/...</a>
+								</div>
+							</li>
+							<li>
+								<div class="top-content-rank">04</div> 
+								<div class="top-content-score">99</div>
+								<div class="top-content-content">
+									<h2>Article headline lorem ipsum dolor site amet</h2>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie </p>
+									<a href="#">http://www.article-link.com/...</a>
+								</div>
+							</li>
+						</ul> 
+					</div><!-- end top-content div -->
+					
+					<div id="top-influencers">
+					<span class="top-content-title">RANK</span> 
+					<span class="top-content-title">SCORE</span>
+						<ul>
+							<li>
+								<div class="top-content-rank">01</div> 
+								<div class="top-content-score">99</div>
+								<div class="top-content-headshot"><img src="images/NetRelevance_HeadShot.png" width="48" height="48" /></div>
+								<div class="top-content-content">
+									<h2>John Smith <span class="twitter-handle">@almatesic</span></h2>
+									<p><a href="#" class="inlineLink">Social Media</a> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+									<p class="tweetInfo">23m <span class="twitter-retweet"><img src="images/NetRelevance_ReTweet.png" width="22" height="12" /> retweeted 76 times</span></p>
+									<a href="#">http://www.article-link.com/...</a>
+								</div>
+							</li>
+						</ul> 
+					</div><!-- end top-influencers div -->
+					
+					<div id="top-twitter">
+				<span class="top-content-title">RANK</span> 
+				<span class="top-content-title">SCORE</span>
+					<ul>
+						<li>
+							<div class="top-content-rank">01</div> 
+							<div class="top-content-score">99</div>
+							<div class="top-content-headshot"><img src="images/NetRelevance_HeadShot.png" width="48" height="48" /></div>
+							<div class="top-content-content">
+								<h2>John Smith <span class="twitter-handle">@almatesic</span></h2>
+								<p><a href="#" class="inlineLink">Social Media</a> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+								<p class="tweetInfo">23m <span class="twitter-retweet"><img src="images/NetRelevance_ReTweet.png" width="22" height="12" /> retweeted 76 times</span></p>
+								<a href="#">http://www.article-link.com/...</a>
+							</div>
+						</li>
+						<li>
+							<div class="top-content-rank">02</div> 
+							<div class="top-content-score">92</div>
+							<div class="top-content-headshot"><img src="images/NetRelevance_HeadShot.png" width="48" height="48" /></div>
+							<div class="top-content-content">
+								<h2>John Smith <span class="twitter-handle">@almatesic</span></h2>
+								<p><a href="#" class="inlineLink">Social Media</a> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+								<p class="tweetInfo">23m <span class="twitter-retweet"><img src="images/NetRelevance_ReTweet.png" width="22" height="12" /> retweeted 76 times</span></p>
+								<a href="#">http://www.article-link.com/...</a>
+							</div>
+						</li>
+					</ul> 
+				</div><!-- end top-twitter div -->
+				</div>
+			</div><!-- end tabs-wrapper div -->
+			
+            <div id="yAxisHeading">relevance quotient</div>
+        </div><!-- end appChart div -->
+        
+        <div id="footer">
+        
+        	<div id="exposureFooterHolder">
+            	<div id="exposureFooterHeader">Exposure</div>
+                <div id="exposureFooter">Exposure (log(x))</div>
+            </div>
+            
+            <div id="trustFooterHolder">
+            	<div id="trustFooterHeader">trust equity</div>
+            </div>
+            
+            <div id="trustFooterBarHolder">
+            	<div id="trustFooterBarHeader">Negative</div>
+                <div id="trustFooterBarHeader" class="middleItem">Neutral</div>
+                <div id="trustFooterBarHeader" class="lastItem">Positive</div>
+            </div>
+            
+            <div id="trendLineFooterHolder">
+            	<div id="trendLineFooterHeader">30-day relevance trend line</div>
+            </div>
+            
+        </div><!-- end footer div -->
+    
+    </div><!-- end app_container div -->
+</body>
+</html>
+	
+	

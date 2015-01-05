@@ -1,0 +1,827 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/*----add fonts-----------*/
+.PFDinTextCondPro-Bold { 
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextCondPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+.PFDinTextPro-Medium { 
+	font-family: Arial, sans, sans-serif;
+	font-family: PFDinTextPro-Medium;
+	font-weight: normal;
+	font-style: normal;
+}
+.PFDinTextPro-Bold { 
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*-----END RESET------------*/
+
+html, body{
+	width:100%;
+	height:100%;
+	overflow:hidden;	
+}
+
+canvas{
+	padding:0px;
+	margin:0px;
+}
+
+/*--------BEGIN HEADER-------------*/
+
+#header > div{
+	position:absolute;
+	z-index:99;	
+	color:#808082;
+	text-transform:uppercase;
+}
+
+#header{
+	width:100%;
+	height:auto;
+	float:left;
+	position:absolute;
+}
+
+#currCompanyHolder, #dateRangeHolder, #relevanceHolder, #trustHolder, #exposureHolder{
+	border-right:1px solid #ccc;	
+	font-family: Arial, sans, sans-serif;
+	font-family: PFDinTextPro-Medium;
+	font-weight: normal;
+	font-style: normal;
+}
+
+#currCompany, #dateRange, #relevance, #trust, #exposure{
+	color:#f78e1e;
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextCondPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+
+#logo{
+	position:absolute;
+	width:179px;
+	height:47px;
+}
+
+/*-----------END HEADER-------------*/
+
+/*----------START FOOTER ---------*/
+#footer > div{
+	position:absolute;
+	z-index:99;	
+	color:#808082;
+	text-transform:uppercase;
+	font-family: Arial, sans, sans-serif;
+	font-family: PFDinTextPro-Medium;
+	font-weight: normal;
+	font-style: normal;
+}
+
+#exposureFooterHeader, #trustFooterHeader{
+	color:#f78e1e;
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextCondPro-Bold;
+	font-weight: normal;
+	font-style: normal;	
+}
+
+#trustFooterBarHolder > div{
+	width:33%;
+	float:left;
+	font-family: Arial, sans, sans-serif;
+	font-family: PFDinTextPro-Medium;
+	font-weight: normal;
+	font-style: normal;
+}
+
+#trustFooterBarHolder .middleItem{
+	text-align:center;
+}
+
+#trustFooterBarHolder .lastItem{
+	float:right;	
+	text-align:right;
+}
+
+
+/*----------START SETTINGS ---------*/
+#settings_container{
+	position:absolute;
+	z-index:1002;	
+	widows:300px;
+	height:300px;
+	top:0;
+	left:0;
+}
+
+#settingsHeader{
+	position:absolute;
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextCondPro-Bold;
+	font-weight: normal;
+	font-style: normal;		
+	color:#ffffff;
+	text-transform:uppercase;
+	z-index:210;
+	width:335px;
+	height:64px;
+	background:url('../images/settingsTabBg.png') no-repeat;
+	cursor:pointer;
+}
+
+#settingsHeader p{
+	position:absolute;
+	left:20px;
+	top:20px;
+}
+
+#app_curtain{
+	width:100%;
+	height:100%;
+	background:#fff;
+	opacity:0.8;
+	display:none;
+	z-index:1001;
+	position:absolute;	
+}
+
+#dateChooseHolder{
+	overflow-y:hidden;	
+	overflow-x:hidden;
+}
+
+#dataRangeChooseHolder, #dateRangeSettingsHeader, #dateRangeStart, #dateRangeEnd, #viewByHolder, #viewbyHeader, #viewbyOption, #dataTypeHolder, #dataTypeHeader, #dataTypeOption, #comaniesHolder, #companiesHeader, #companiesOption{
+	position:absolute;	
+	text-transform:uppercase;
+	z-index:105;
+	color:#fff;
+	font-family: Arial, sans, sans-serif;
+	font-family: PFDinTextPro-Medium;
+	font-weight: normal;
+	font-style: normal;	
+}
+
+#dateRangeStart, #dateRangeEnd, #viewbyOption, #dataTypeOption, #companiesOption{
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+
+#dataRangeChooseHolder, #viewByHolder, #dataTypeHolder, #comaniesHolder{
+	cursor:pointer;
+}
+
+#dateRangeSettingsHeader, #viewbyHeader, #dataTypeHeader, #companiesHeader{
+	color:#c8c8c8;	
+}
+
+#dateOutputHeader, #dateOutputStart, #dateOutputEnd{
+	position:absolute;	
+	text-transform:uppercase;
+	z-index:110;
+	color:#c8c8c8;
+	font-family: Arial, sans, sans-serif;
+	font-family: PFDinTextPro-Medium;
+	font-weight: normal;
+	font-style: normal;
+}
+
+#dateOutputStart, #dateOutputEnd{
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+	color:#fff;
+}
+
+#dateChooseHolder{
+	position:absolute;	
+	text-transform:uppercase;
+	z-index:110;
+}
+
+#datePickerStart, #datePickerEnd{
+	position:absolute;	
+	text-transform:uppercase;
+	z-index:110;
+	background:#828282;
+}
+
+#datePickerStart span.dateChoosePreTxt, #datePickerEnd span.dateChoosePreTxt{
+	display:block;
+	position:absolute;	
+	text-transform:uppercase;
+	z-index:110;
+	text-align:center;
+	font-family: Arial, sans, sans-serif;
+	font-family: PFDinTextPro-Medium;
+	font-weight: normal;
+	font-style: normal;
+	color:#c8c8c8;
+	width:100%;
+}
+
+.ui-datepicker-title{
+	background:#828282;	
+	width:100%;
+	text-align:center;
+}
+.ui-datepicker-title span.dateChoosePreTxt{
+	text-transform:uppercase;
+	color:#c8c8c8;
+	position:absolute;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next{
+	display:block;	
+	position:absolute;
+	border:1px solid #828282;
+	cursor:pointer;
+}
+
+a.ui-datepicker-prev:active, a.ui-datepicker-next:active,a.ui-datepicker-prev:hover, a.ui-datepicker-next:hover {
+	display:block;	
+	position:absolute;
+	border:1px solid #828282;
+	cursor:pointer;
+}
+
+#viewByChooseHolder, #viewByChooseHolder ul, #viewByChooseHolder ul li, #dataTypeOutputHolder, #dataTypeOutputHolder ul, #dataTypeOutputHolder ul li, #chooseCompanyHolder{
+	position:absolute;	
+	text-transform:uppercase;
+	z-index:110;
+}
+
+#viewByOutputHeader, #viewByOutputSelected, #dataTypeOutputHeader, #dataTypeOutputSelected, #chooseCompanyHeader, #chooseCompanySelected{
+	position:absolute;	
+	text-transform:uppercase;
+	z-index:105;
+	color:#c8c8c8;
+	font-family: Arial, sans, sans-serif;
+	font-family: PFDinTextPro-Medium;
+	font-weight: normal;
+	font-style: normal;	
+}
+
+#viewByOutputSelected,  #dataTypeOutputSelected, #chooseCompanySelected{
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+	color:#fff;
+}
+
+#viewByChooseHolder ul, #dataTypeOutputHolder ul{
+	position:absolute;
+}
+
+#viewByChooseHolder ul li, #dataTypeOutputHolder ul li{
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+	color:#c8c8c8;
+	cursor:pointer;
+	position:absolute;
+}
+
+#viewByChooseHolder ul li span, #dataTypeOutputHolder ul li span{
+	display:block;
+	position:absolute;	
+}
+
+#viewByChooseHolder ul li.selectedLi, #dataTypeOutputHolder ul li.selectedLi{
+	color:#f78e1e;
+	background:url('../images/checkmark.png') no-repeat;
+	background-size:cover;
+}
+
+#choosePrimaryCompany, #chooseSecondaryCompany1, #chooseSecondaryCompany2, #chooseSecondaryCompany3{
+	position:absolute;	
+	text-transform:uppercase;
+	z-index:105;
+	color:#c8c8c8;
+	font-family: Arial, sans, sans-serif;
+	font-family: PFDinTextPro-Medium;
+	font-weight: normal;
+	font-style: normal;	
+}
+
+#primarydropdown{
+	position:absolute;
+	background:#f3f2f0 url('../images/drop_down_arrow.png') no-repeat;
+	background-position:100% 0%;
+	background-size:45px 34px;
+	z-index:150;
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+	color:#f78e1e;
+	cursor:pointer;
+}
+
+#altCompany1dropdown, #altCompany2dropdown,  #altCompany3dropdown{
+    position:absolute;
+	background:#787878 url('../images/drop_down_arrow_dark.png') no-repeat;
+	background-position:100% 0%;
+	background-size:45px 34px;
+	z-index:145;
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+	color:#c8c8c8;
+	cursor:pointer;
+	border:1px solid #aeaeae;
+}
+
+#dropdownOptionsHolder{
+	position:absolute;
+	z-index:150;
+	background:#f3f2f0;
+	display:none;
+}
+
+#dropdownOptionsHolder > div{
+	color:#999999;	
+	cursor:pointer;
+	width:auto;
+	height:auto;
+}
+
+#dropdownOptionsHolder > div:active, #dropdownOptionsHolder > div:focus, #dropdownOptionsHolder > div:hover{
+	background:#f78e1e;
+	color:#fff;
+}
+
+#dropdownOptionsHolder > div span{
+	position:relative;
+	width:auto;	
+}
+
+#dropdownOptionsHolder > div.selectedDropdown{
+	color:#f78e1e;
+	background:url('../images/checkmark_small.png') no-repeat;
+	background-size:contain;
+}
+
+
+/*--------END SETTINGS----------------*/
+
+/*--------BEGIN CHART STYLES----------*/
+
+#appChart{
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:999;
+}
+
+.plotMarker{
+	position:absolute;
+	z-index:10;	
+	font-family: Arial, sans, sans-serif;
+	font-family: PFDinTextPro-Medium;
+	font-weight: normal;
+	font-style: normal;
+	color:#828282;
+}
+
+#yAxisHeading{
+	position:absolute;
+	-webkit-transform: rotate(-90deg); 
+	-moz-transform: rotate(-90deg);	
+	z-index:10;	
+	font-family: Arial, sans, sans-serif;
+	font-family: PFDinTextPro-Medium;
+	font-weight: normal;
+	font-style: normal;
+	color:#828282;	
+	text-transform:uppercase;
+}
+
+#trend-detail-wrapper{
+	width: 291px;
+	height: 322px;	
+	position:absolute;
+	z-index:999;
+	margin-top:-27px;
+	left:-999px;
+}
+
+#point-detail-wrapper{
+	width: 291px;
+	height: 362px;	
+	position:absolute;
+	z-index:999;
+	margin-top:-27px;
+	left:-999px;
+}
+
+#point-detail-wrapper div#right-column {
+	height: 362px;
+}
+
+#instanceFull{
+	float:left;
+	width:100%;
+	text-align:center;
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+	color:#fff;
+	font-size:18px;
+	background:#f78e1e;
+	padding:10px 0 10px 0;
+	cursor:pointer;
+	margin-top:28px;
+}
+
+#left-column {
+	width: 30px;
+	height: 60px;
+	position:absolute;
+}
+
+#left-column img {
+}
+
+#right-column {
+	background-color:#616161;
+	width: 261px;
+	height: 322px;
+	position:absolute;
+	left:30px;
+}
+
+.close {
+	float: left;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+
+#trendDetailClose{
+	cursor:pointer;
+}
+
+#pointDetailClose{
+	cursor:pointer;
+}
+
+.title {
+	margin-top: 20px;
+	margin-left:15px;
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+	color:#cecece;
+	font-size:14px;
+	float:left;
+}
+#top, #middle, #bottom {
+	width:261px;
+	float:left;
+}
+
+#middle-left-column { 
+	border-right: 1px solid #FFFFFF;
+    float: left;
+    height: 85px;
+    margin-left: 12px;
+    margin-top: 25px;
+    width: 95px;
+}
+
+#point-detail-wrapper span#middle-left-column{
+	height: 120px;
+}
+
+#middle-left-column p{
+	color: #FFFFFF;
+    float: right;
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+    font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+    font-size: 12px;
+    margin:10px 15px 25px 0;
+}
+
+#middle-right-column { 
+	float: left;
+    margin:20px 0 0 10px;
+	width:130px;
+}
+
+#point-detail-wrapper  span#middle-right-column p {
+	width:160px;
+}
+
+#middle-right-column p{
+    color: #F78E1E;
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+    font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+    font-size: 36px;
+	float:left;
+	width:130px;
+	margin:0px 0 10px 0;
+}
+
+#bottom p{
+	color: #CECECE;
+    float: left;
+    font-family: arial;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+    text-align: justify;
+}
+
+/*------------Tabs Section -----------------*/
+#tabs-wrapper{
+	width:100%;
+	float:left;
+	position:absolute;
+	left:-2800px;
+	top:0;
+	z-index:1000;
+}
+
+#tabsCloseBtn{
+	width:114px;
+	height:47px;
+	float:left;
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:301;
+	background:url('../images/returnGraphBtn.png') no-repeat;
+	cursor:pointer;
+}
+
+#tabsCloseBtn p{
+	font-size:16px;
+	font-family: arial;
+	opacity:0;
+}
+
+#tabs-wrapper hr{
+	width:100%;
+	border: 6px solid #f78e1e;
+	float:left;
+	margin:0px;
+}
+#tabs{
+	margin:0px 0 0 0px;	
+	padding-top:40px;
+	padding-left:30px;
+	float:left;
+	width:100%;
+	background:#f3f2f0;
+	height:40px;
+}
+
+#tabs ul {
+	float:left;
+	list-style:none;
+}
+
+#tabs li{
+	padding:10px;
+	float:left;
+	list-style:none;
+	background-color:#828282;
+	color:#e8e5e1;
+	margin-left: 10px;
+	font-size:20px;
+	font-family: Arial, sans, sans-serif;
+	font-family: PFDinTextPro-Medium;
+	font-weight: normal;
+	font-style: normal;
+	cursor:pointer;
+}
+
+#tabs li.selectedTopTab{
+	padding:10px;
+	float:left;
+	list-style:none;
+	background-color:#f78e1e;
+	color:#fff;
+}
+
+#content-wrapper{
+	position:absolute;
+	width:100%;
+	height:100%;
+	background:#fff;
+	z-index:0;
+}
+
+#top-content, #top-influencers, #top-twitter{
+	color: #828282;
+    float: left;
+    font-family: arial;
+	margin-left:30px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	width:97%;
+	height:640px;
+	background:#fff;
+	position:absolute;
+
+}
+
+#top-influencers, #top-twitter{
+	display:none;
+}
+
+#top-content ul, #top-influencers ul , #top-twitter ul  {
+    float: left;
+    list-style: none outside none;
+    margin: 11px 0 0 0px;
+    padding-top: 7px;
+	width:100%;
+}
+
+#top-content ul li, #top-influencers ul li, #top-twitter ul li{
+	float:left;	
+	border-top: 1px solid #CCCCCC;
+	padding:10px;
+}
+
+.top-content-title{
+	float: left;
+    padding: 0;
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.top-content-rank, .top-content-score{
+	float: left;
+    font-size: 36px;
+    height: 100px;
+    margin-left: 15px;
+    margin-right: 26px;
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+.top-content-score{
+	color: #F78E1E;
+    height: 100px;
+}
+.top-content-content{
+	float: left;
+    margin-left: 35px;
+    width: 70%;
+	
+}
+.top-content-content h2{
+	font-size: 26px;
+	float:left;
+	width:100%;
+	margin:5px 0 15px 0px;
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextPro-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+.top-content-content p{
+	float:left;
+	width:100%;
+	font-family: Arial, sans, sans-serif;
+	font-weight:bold;
+	font-family: PFDinTextPro-Medium;
+	font-weight: normal;
+	font-style: normal;
+	line-height:22px;
+}
+.top-content-content a{
+	color: #F78E1E;
+    text-decoration: none;
+	display:block;
+	float:left;
+	width:100%;
+	margin:10px 0 10px 0;
+}
+
+.top-content-headshot{
+    float: left;
+    height: 100px;
+	margin-left: 35px;
+	margin-top: 6px;
+}
+
+.twitter-handle{
+	font-weight:bold;
+	font-size:12px;
+}
+.twitter-retweet{
+	margin-left:30px;
+}
+
+.twitter-link{
+	margin-left:0px;
+}
+
+.twitter-link2{
+	margin-left:35px;
+}
+.twitter-influencers li{
+	width:98%;
+}
+
+.twitter-influencers li .top-content-rank{
+	height:70px;	
+}
+.twitter-influencers li .top-content-score{
+	height:70px;	
+}
+.twitter-influencers li .top-content-headshot{
+	height:70px;	
+}
+
+
+
+/*--------END CHART STYLES-------------*/
